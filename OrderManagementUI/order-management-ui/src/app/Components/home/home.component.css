@@ -1,0 +1,43 @@
+.home-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.hero-section {
+  background: #212529;
+  color: white;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+}
+
+.hero-section p {
+  color: #d6d6d6;
+}
+
+.feature-icon {
+  font-size: 45px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card h4 {
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 9px 20px;
+  font-weight: 500;
+}

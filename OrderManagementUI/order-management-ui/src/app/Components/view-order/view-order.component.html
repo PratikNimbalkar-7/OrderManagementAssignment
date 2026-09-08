@@ -1,0 +1,269 @@
+<div class="container mt-4">
+
+  <h2>View Order</h2>
+
+
+  <!-- Search -->
+
+  <div class="card mb-4">
+
+    <div class="card-body">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="orderCode"
+            placeholder="Enter Order Code e.g. SH000001">
+
+        </div>
+
+
+        <div class="col-md-2">
+
+          <button
+            type="button"
+            class="btn btn-primary w-100"
+            (click)="searchOrder()">
+
+            Search
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        *ngIf="errorMessage"
+        class="alert alert-danger mt-3">
+
+        {{ errorMessage }}
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Order -->
+
+  <div *ngIf="order">
+
+
+    <!-- Header -->
+
+    <div class="card mb-4">
+
+      <div class="card-header">
+        <h5>Order Information</h5>
+      </div>
+
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <strong>Order Code:</strong>
+
+            {{ order.orderCode }}
+
+          </div>
+
+
+          <div class="col-md-4">
+
+            <strong>Order Date:</strong>
+
+            {{ order.orderDate | date:'dd-MM-yyyy' }}
+
+          </div>
+
+
+          <div class="col-md-4">
+
+            <strong>Remark:</strong>
+
+            {{ order.remark }}
+
+          </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <strong>Billing Address</strong>
+
+            <p>
+              {{ order.billingAddress }}
+            </p>
+
+          </div>
+
+
+          <div class="col-md-6">
+
+            <strong>Shipping Address</strong>
+
+            <p>
+              {{ order.shippingAddress }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Details -->
+
+    <div class="card mb-4">
+
+      <div class="card-header">
+        <h5>Order Details</h5>
+      </div>
+
+      <div class="card-body">
+
+        <table class="table table-bordered">
+
+          <thead>
+
+            <tr>
+
+              <th>#</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th>Discount</th>
+              <th>Discount Amount</th>
+              <th>Net Amount</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr
+              *ngFor="
+                let detail of order.orderDetails;
+                let i = index
+              ">
+
+              <td>
+                {{ i + 1 }}
+              </td>
+
+              <td>
+                {{ detail.productName }}
+              </td>
+
+              <td>
+                {{ detail.quantity }}
+              </td>
+
+              <td>
+                ₹{{ detail.rate }}
+              </td>
+
+              <td>
+                ₹{{ detail.amount }}
+              </td>
+
+              <td>
+                {{ detail.discountType }}
+              </td>
+
+              <td>
+                ₹{{ detail.discountAmount }}
+              </td>
+
+              <td>
+                ₹{{ detail.netAmount }}
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+
+    <!-- Totals -->
+
+    <div class="row justify-content-end">
+
+      <div class="col-md-4">
+
+        <div class="card">
+
+          <div class="card-body">
+
+            <div class="d-flex justify-content-between">
+
+              <strong>Sub Total:</strong>
+
+              <span>
+                ₹{{ order.subTotal | number:'1.2-2' }}
+              </span>
+
+            </div>
+
+
+            <div class="d-flex justify-content-between mt-2">
+
+              <strong>Total Discount:</strong>
+
+              <span>
+                ₹{{ order.totalDiscount | number:'1.2-2' }}
+              </span>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="d-flex justify-content-between">
+
+              <strong>Grand Total:</strong>
+
+              <strong>
+                ₹{{ order.grandTotal | number:'1.2-2' }}
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
