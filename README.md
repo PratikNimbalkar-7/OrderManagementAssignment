@@ -302,7 +302,7 @@ This allows multiple order details to be inserted efficiently in a single databa
 
 Example TVP:
 
-```sql
+sql
 CREATE TYPE dbo.OrderDetailType AS TABLE
 (
     ProductId INT NOT NULL,
