@@ -355,7 +355,7 @@ Net Amount
 
 based on Product, Quantity, and Discount.
 📁 Project Structure
-OrderManagement
+` OrderManagement
 │
 ├── Backend
 │   └── OrderManagement
@@ -385,7 +385,8 @@ OrderManagement
 │       ├── angular.json
 │       └── package.json
 │
-└── README.md
+└── README.md 
+`
 🚀 How to Run the Project
 Prerequisites
 
@@ -398,6 +399,7 @@ SQL Server
 SQL Server Management Studio
 Visual Studio
 Visual Studio Code
+
 🗄️ Database Setup
 Open SQL Server Management Studio.
 Create the required database.
@@ -407,6 +409,7 @@ Insert master data.
 Create the Table-Valued Parameter.
 Create the Stored Procedures.
 Update the database connection string in the API configuration.
+
 🔧 Backend Setup
 Open the backend solution in Visual Studio.
 Update the SQL Server connection string.
@@ -438,7 +441,7 @@ Angular communicates with the ASP.NET Core Web API using HTTP requests.
 
 Example:
 
-Angular
+` Angular
    ↓
 OrderService
    ↓
@@ -452,7 +455,7 @@ ADO.NET
    ↓
 Stored Procedure
    ↓
-SQL Server
+SQL Server `
 
 CORS is configured in the API to allow communication from the Angular application.
 
@@ -474,7 +477,7 @@ Create Order
 Search Order by Order Code
 
 ✨ Key Implementation Highlights
-Angular frontend with reusable components
+`Angular frontend with reusable components
 ASP.NET Core Web API
 3-Layer Architecture
 Separation of concerns
@@ -494,7 +497,7 @@ Angular Services
 TypeScript interfaces/models
 Bootstrap-based responsive UI
 Error and success message handling
-Clean and maintainable code structure
+Clean and maintainable code structure `
 
 👨‍💻 Developer
 
